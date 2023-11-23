@@ -116,14 +116,14 @@ def pregunta_04():
     # Importe mean_squared_error
     from sklearn.linear_model import LinearRegression
     from sklearn.model_selection import train_test_split
-    from sklearn.metrics import mean_squared_error, r2_score
+    from sklearn.metrics import mean_squared_error
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
     df = pd.read_csv('gm_2008_region.csv')
 
     # Asigne a la variable los valores de la columna `fertility`
-    X_fertility = df['fertility'].values
-    X_fertility = X_fertility.reshape(-1,1)
+    X_fertility = df['fertility'].values.reshape(-1,1)
+    
 
     # Asigne a la variable los valores de la columna `life`
     y_life = df['life'].values
@@ -139,7 +139,7 @@ def pregunta_04():
     )
 
     # Cree una instancia del modelo de regresión lineal
-    linearRegression = linearRegression()
+    linearRegression = LinearRegression()
 
     # Entrene el clasificador usando X_train y y_train
     linearRegression.fit(X_train, y_train)
