@@ -53,16 +53,16 @@ def pregunta_02():
     print(df.shape)
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
-    print(round(df['life'].corr(df['fertility']),4))
+    print(round(df['life'].corr(df['fertility']), 4))
 
     # Imprima la media de la columna `life` con 4 decimales.
-    print(round(df['life'].mean(),4))
+    print(round(df['life'].mean(), 4))
 
     # Imprima el tipo de dato de la columna `fertility`.
     print(type(df['fertility']))
 
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    print(round(df['GDP'].corr(df['life'])),4)
+    print(round(df['GDP'].corr(df['life'])), 4)
 
 
 def pregunta_03():
@@ -127,7 +127,7 @@ def pregunta_04():
 
     # Asigne a la variable los valores de la columna `life`
     y_life = df['life'].values
-
+    y_life = y_life.reshape(-1,1)
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 53. El tamaño de la muestra de entrenamiento es del 80%
